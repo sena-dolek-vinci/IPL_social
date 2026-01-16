@@ -30,6 +30,10 @@ describe("EmailValidator" , () => {
             let actual = emailValidator.validate("test@");
             expect(actual).toBe(false);
         });
+        it("should return false when domain has no dot", () => {
+            let actual = emailValidator.validate("test@examplecom");
+            expect(actual).toBe(false);
+        });
       
        
       
