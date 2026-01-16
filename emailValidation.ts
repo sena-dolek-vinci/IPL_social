@@ -5,11 +5,10 @@ export class EmailValidation {
         if (!this.hasAt(email)) return false;
         if (!this.hasTextBeforeAndAfterAt(email)) return false;
         if (!this.domainHasDotNotLast(email)) return false;
-        
+
         return true; 
     
     }
-
 
     // a  
     private hasSpace(email:string) : boolean {
