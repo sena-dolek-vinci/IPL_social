@@ -5,6 +5,7 @@ export class EmailValidation {
             return false; 
         }   
         if (!this.hasAt(email)) return false;
+        if (!this.hasTextBeforeAndAfterAt(email)) return false;
         return true; 
         
 
@@ -32,13 +33,9 @@ export class EmailValidation {
       private hasTextBeforeAndAfterAt(email: string): boolean {
         const atIndex = this.firstIndexOfAt(email);
         if (atIndex === -1) return false;
-    
-        // texte avant @ => au moins 1 char
         if (atIndex === 0) return false;
-    
-        // texte après @ => au moins 1 char
         if (atIndex === email.length - 1) return false;
-    
+
         return true;
       }
 

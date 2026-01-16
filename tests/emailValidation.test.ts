@@ -17,7 +17,11 @@ describe("EmailValidator" , () => {
         it("should return false when missing @", () => {
             let actual = emailValidator.validate("testexample.com");
             expect(actual).toBe(false);
-          });
+        });
+        it("should return false when contains space", () => {
+            let actual = emailValidator.validate("test @example.com");
+            expect(actual).toBe(false);
+        });
 
 
     });
