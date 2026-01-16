@@ -1,14 +1,13 @@
 export class EmailValidation {
 
     public validate(email: string) : boolean {
-        if(this.hasSpace(email)) {
-            return false; 
-        }   
+        if(this.hasSpace(email)) return false; 
         if (!this.hasAt(email)) return false;
         if (!this.hasTextBeforeAndAfterAt(email)) return false;
-        return true; 
+        if (!this.domainHasDotNotLast(email)) return false;
         
-
+        return true; 
+    
     }
 
 
