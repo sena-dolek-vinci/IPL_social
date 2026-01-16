@@ -34,12 +34,11 @@ describe("EmailValidator" , () => {
             let actual = emailValidator.validate("test@examplecom");
             expect(actual).toBe(false);
         });
+        it("should return false when domain ends with dot", () => {
+            let actual = emailValidator.validate("test@example.com.");
+            expect(actual).toBe(false);
+        });
       
-       
-      
-
-
-
     });
 }); 
 
