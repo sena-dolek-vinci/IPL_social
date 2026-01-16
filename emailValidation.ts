@@ -42,13 +42,13 @@ export class EmailValidation {
         const atIndex = this.firstIndexOfAt(email);
         if (atIndex === -1) return false;
     
-        // domaine = tout après le premier @
+     
         let domain = "";
         for (let i = atIndex + 1; i < email.length; i++) {
           domain += email[i];
         }
     
-        // doit contenir un '.' et pas en dernier caractère du domaine
+        
         let hasDot = false;
         for (let i = 0; i < domain.length; i++) {
           if (domain[i] === '.') hasDot = true;
