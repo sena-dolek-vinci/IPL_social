@@ -28,6 +28,30 @@ export class EmailValidation {
         return atCount >= 1; 
       }
 
+      //c 
+      private hasTextBeforeAndAfterAt(email: string): boolean {
+        const atIndex = this.firstIndexOfAt(email);
+        if (atIndex === -1) return false;
+    
+        // texte avant @ => au moins 1 char
+        if (atIndex === 0) return false;
+    
+        // texte après @ => au moins 1 char
+        if (atIndex === email.length - 1) return false;
+    
+        return true;
+      }
+
+
+
+
+
+      private firstIndexOfAt(email: string): number {
+        for (let i = 0; i < email.length; i++) {
+          if (email[i] === '@') return i;
+        }
+        return -1;
+      }
 
 
         
