@@ -22,6 +22,13 @@ describe("EmailValidator" , () => {
             let actual = emailValidator.validate("test @example.com");
             expect(actual).toBe(false);
         });
+        it("should return false when no text before @", () => {
+            let actual = emailValidator.validate("@example.com");
+            expect(actual).toBe(false);
+        });
+       
+      
+
 
 
     });
